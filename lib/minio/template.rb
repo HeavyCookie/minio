@@ -1,5 +1,5 @@
 module Minio
-  module Template
+  class Template
     def self.policy(bucket = 'default')
       {
         "Version" => "2012-10-17",
@@ -22,7 +22,7 @@ module Minio
       }
     end
 
-    def self.fog_config
+    def self.fog_credentials
       {
         provider:              'AWS',
         aws_access_key_id:     ENV['AWS_ACCESS_KEY'] || ENV['MINIO_ACCESS_KEY'],
